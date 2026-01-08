@@ -1,0 +1,293 @@
+@import './variables.css';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+    url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'),
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'),
+    url('https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'),
+    url('https://images.unsplash.com/photo-1551892376-2c0ed6f3e9f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center, center, center, center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.centered-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: linear-gradient(135deg, #333333, #444444);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 107, 53, 0.1);
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #555555;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 107, 53, 0.2);
+  transform: translateY(-5px);
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35, #ffd700, #8b4513);
+}
+
+.user-page .form-container::before {
+  background: linear-gradient(90deg, #ff6b35, #ffd700);
+}
+
+.partner-page .form-container::before {
+  background: linear-gradient(90deg, #8b4513, #ff6b35);
+}
+
+.name-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.name-row .form-group {
+  flex: 1;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #ffd700;
+  font-family: 'Brush Script MT', cursive;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: glow 3s ease-in-out infinite;
+}
+
+.user-page h1 {
+  color: #ffd700;
+}
+
+.partner-page h1 {
+  color: #ff6b35;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #ffd700);
+}
+
+.user-page h1::after {
+  background: linear-gradient(90deg, #ff6b35, #ffd700);
+}
+
+.partner-page h1::after {
+  background: linear-gradient(90deg, #8b4513, #ff6b35);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333333;
+  font-size: 1rem;
+}
+
+input[type="email"], input[type="password"], input[type="text"], input[type="tel"] {
+  border: 1px solid #666666;
+  border-radius: 8px;
+  background-color: #555555;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="text"]::placeholder {
+  color: #cccccc;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2), 0 0 10px rgba(0, 123, 255, 0.1);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #ff6b35, #cc5500);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.user-page button {
+  background: linear-gradient(135deg, #ff6b35, #cc5500);
+}
+
+.partner-page button {
+  background: linear-gradient(135deg, #8b4513, #654321);
+}
+
+.link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.user-page .form-container::before {
+  background: linear-gradient(45deg, #ff6b35, #ff4757, #ff3838);
+}
+
+.partner-page .form-container::before {
+  background: linear-gradient(45deg, #007bff, #0056b3, #004085);
+}
+
+/* Home Page Styles */
+.reel-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.reel-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reel-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  color: #ffffff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.reel-title {
+  font-size: 3rem;
+  color: #ffd700;
+  font-family: 'Brush Script MT', cursive;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.reel-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
