@@ -7,19 +7,19 @@ const Home = () => {
     {
       _id: '1',
       name: 'Sample Food 1',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      video: 'https://www.pexels.com/download/video/5780696/',
       description: 'This is a sample food description that should be truncated to two lines maximum to fit the UI properly.'
     },
     {
       _id: '2',
       name: 'Sample Food 2',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+      video: 'https://www.pexels.com/download/video/4253332/',
       description: 'Another sample food item with a longer description to test the truncation feature and ensure it works correctly.'
     },
     {
       _id: '3',
       name: 'Sample Food 3',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      video: 'https://www.pexels.com/download/video/5780184/',
       description: 'Third sample video for testing the scrolling functionality and UI layout.'
     }
   ]);
